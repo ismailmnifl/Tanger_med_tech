@@ -1,0 +1,8 @@
+
+@media screen and (max-width: 768px) {
+    .navTitle{ 
+        width: 50%;
+        position: relative;
+        left: 100px;
+    }
+}
