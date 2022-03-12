@@ -1,0 +1,60 @@
+.loginPage {
+    width: 100%;
+    height: 92vh;
+    background-color: #E5E7EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.smallWrapper {
+    background-color: white;
+}
+.formLogin {
+    width: 70%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.formLogin .hello{
+    width: 90%;
+}
+.loginPage .leftSide {
+    width: 50%;
+    height: 100%;
+}
+
+.loginPage .rightSide {
+    width: 50%;
+    background-color: #E5E7EB;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imgBg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.loginPage .rightSide .loginAvatar{
+    width: 250px;
+    height: auto;
+}
+@media screen and (max-width: 768px) {
+    .loginPage .leftSide {
+        display: none;
+    }
+
+    .loginPage .rightSide {
+        width: 100%;
+    }
+    .formLogin {
+        width: 70%;
+    }
+}

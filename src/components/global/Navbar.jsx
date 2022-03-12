@@ -1,6 +1,6 @@
 import React from 'react';
 import * as reactBootstrap from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { Link ,NavLink} from "react-router-dom";
 import '../styles/navbar.css';
 export default function Navbar() {
 
@@ -17,9 +17,9 @@ export default function Navbar() {
                 <reactBootstrap.Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <reactBootstrap.Navbar.Collapse id="basic-navbar-nav">
                     <reactBootstrap.Nav className="me-auto">
-                        <reactBootstrap.Nav className='linknav' href="#home"><Link to="/" className="link">Home</Link></reactBootstrap.Nav>
-                        <reactBootstrap.Nav className='linknav' href="#link"><Link to="/dashboard" className="link">Dashboard</Link></reactBootstrap.Nav>
-                        <reactBootstrap.Nav className='linknav' href="#link"><Link to="/about" className="link">About</Link></reactBootstrap.Nav>
+                        <reactBootstrap.Nav className='linknav' href="#home"><NavLink to="/" className="link">Home</NavLink></reactBootstrap.Nav>
+                        <reactBootstrap.Nav className='linknav' href="#link"><NavLink to="/dashboard" className="link">Dashboard</NavLink></reactBootstrap.Nav>
+                        <reactBootstrap.Nav className='linknav' href="#link"><NavLink to="/about" className="link">About</NavLink></reactBootstrap.Nav>
                         <reactBootstrap.Nav  href="#link"><Link to="/login" className="link"><reactBootstrap.Button style={{backgroundColor: "#0E185F",border:"none"}} variant="primary" >Login</reactBootstrap.Button></Link></reactBootstrap.Nav>
                     </reactBootstrap.Nav>
                 </reactBootstrap.Navbar.Collapse>

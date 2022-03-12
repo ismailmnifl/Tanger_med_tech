@@ -1,16 +1,16 @@
 import React from 'react'
-import BarChart from '../components/dashboardComponents/Charts/BarChart/BarChart'
-import {UserData} from '../components/dashboardComponents/Charts/BarChart/Data'
-
+import './styles/home.css'
 import { useState, useEffect } from 'react';
-
+import * as reactBootstrap from 'react-bootstrap';
 export default function Home() {
 
+
+  
  
   return (
     <div className="home">
-
-        <h1>Home page</h1>
+  
+        
         </div>
   )
 }
