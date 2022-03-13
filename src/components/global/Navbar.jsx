@@ -20,7 +20,7 @@ export default function Navbar() {
                         <reactBootstrap.Nav className='linknav' href="#home"><NavLink to="/" className="link">Home</NavLink></reactBootstrap.Nav>
                         <reactBootstrap.Nav className='linknav' href="#link"><NavLink to="/dashboard" className="link">Dashboard</NavLink></reactBootstrap.Nav>
                         <reactBootstrap.Nav className='linknav' href="#link"><NavLink to="/about" className="link">About</NavLink></reactBootstrap.Nav>
-                        <reactBootstrap.Nav  href="#link"><Link to="/login" className="link"><reactBootstrap.Button style={{backgroundColor: "#0E185F",border:"none"}} variant="primary" >Login</reactBootstrap.Button></Link></reactBootstrap.Nav>
+                        <reactBootstrap.Nav><Link to="/login" className="link btnMarg"><reactBootstrap.Button style={{backgroundColor: "#0E185F",border:"none"}} variant="primary" >Login</reactBootstrap.Button></Link></reactBootstrap.Nav>
                     </reactBootstrap.Nav>
                 </reactBootstrap.Navbar.Collapse>
             </reactBootstrap.Container>

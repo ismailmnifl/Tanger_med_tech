@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useState } from 'react';
 import { Link } from "react-router-dom";
-import bg from '../assets/images/PORT-TAANGER-MED.jpg';
+import bg from '../assets/images/login.jpg';
 import avatar from '../assets/images/loginAvatar.png';
 
 import './styles/login.css';
@@ -24,7 +24,7 @@ export default function Login() {
 
                     <Form.Group className='hello' controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control name='pass' type="password" placeholder="Password" />
+                        <Form.Control name='pass' type="password" placeholder="Enter Password" />
                     </Form.Group>
 
                     <Button style={{ backgroundColor: "#0E185F", border: "none" }} className="mt-2" variant="primary btn-block" type="submit">

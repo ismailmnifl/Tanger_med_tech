@@ -5,9 +5,14 @@
         position: relative;
         left: 100px;
     }
+    .btnMarg {
+        margin-top: 10px;
+    }
 }
-
 .merci {
     background-color: red;
     color :white;
+}
+.navTitle {
+    font-weight: 400;
 }
