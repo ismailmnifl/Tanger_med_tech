@@ -1,0 +1,12 @@
+.slider {
+    width: 76%;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .slider {
+        width: 100%;
+        height: auto;
+    }
+    
+}

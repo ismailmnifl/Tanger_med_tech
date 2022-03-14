@@ -1,7 +1,8 @@
 import '../styles/sidebar.css'
 import { NavLink } from "react-router-dom";
 import * as reactBootstrap from 'react-bootstrap';
-import { Link } from "react-router-dom";
+
+import NavbarItems from './NavbarItems';
 
 import { useState, useEffect } from 'react';
 export default function Sidebar() {
@@ -37,40 +38,7 @@ export default function Sidebar() {
                     <reactBootstrap.Offcanvas.Title>Tanger Med Tech</reactBootstrap.Offcanvas.Title>
                 </reactBootstrap.Offcanvas.Header>
                 <reactBootstrap.Offcanvas.Body>
-                    <ul className='sidebarItems'>
-                        <Link to="/dashboard/users" className="link">
-                            <li className='item'>
-                                <div className="icon">
-                                    <i className="fa-solid fa-users"></i>
-                                </div>
-                                <div className="textLink">Users</div>
-                            </li>
-                        </Link>
-                        <Link to="/dashboard/reservation" className="link">
-                            <li className='item'>
-                                <div className="icon">
-                                    <i className="fa-solid fa-cart-arrow-down"></i>
-                                </div>
-                                <div className="textLink">Reservations</div>
-                            </li>
-                        </Link>
-                        <Link to="/dashboard/roles" className="link">
-                            <li className='item'>
-                                <div className="icon">
-                                    <i className="fa-solid fa-user-gear"></i>
-                                </div>
-                                <div className="textLink">Roles</div>
-                            </li>
-                        </Link>
-                        <Link to="/" className="link">
-                            <li className='item logout'>
-                                <div className="icon">
-                                    <i className="fa-solid fa-right-from-bracket fa-rotate-180"></i>
-                                </div>
-                                <div className="textLink">Logout</div>
-                            </li>
-                        </Link>
-                    </ul>
+                <NavbarItems />
                 </reactBootstrap.Offcanvas.Body>
             </reactBootstrap.Offcanvas>
         </>

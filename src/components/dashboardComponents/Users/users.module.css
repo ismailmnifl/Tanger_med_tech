@@ -38,6 +38,7 @@ h2 small {
 .responsiveTable li {
     border-radius: 3px;
     padding: 25px 30px;
+    font-weight: 400;
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
@@ -155,3 +156,4 @@ h2 small {
   ::-webkit-scrollbar-thumb:hover {
     background: black; 
   }
+

@@ -1,18 +1,29 @@
 
 @media screen and (max-width: 768px) {
+
     .navTitle{ 
         width: 50%;
         position: relative;
         left: 100px;
     }
+
     .btnMarg {
         margin-top: 10px;
     }
+
+    .logoutLink  {
+        margin-bottom: 10px;
+        margin-left: 0px;
+    }
 }
-.merci {
-    background-color: red;
-    color :white;
-}
+
 .navTitle {
     font-weight: 400;
+}
+
+.logoutLink:hover {
+    color: rgb(64, 64, 241);
+}
+.logoutLink {
+    margin-left: 10px;
 }

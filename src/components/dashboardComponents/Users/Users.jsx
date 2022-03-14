@@ -4,11 +4,15 @@ import axios from 'axios';
 
 import { useState, useEffect } from 'react';
 import Modal from '../Modal/Modal'
+
+import { Link, NavLink } from "react-router-dom";
+
+
 export default function Users() {
+
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-
     const getAllUSers = async () => {
       const res = await axios.get("http://localhost:3030/users/");
       console.log(res.data);
@@ -16,6 +20,14 @@ export default function Users() {
     }
     getAllUSers();
   }, []);
+
+  const handeleDelete = async (id) => {
+   const res = await axios.delete(`http://localhost:3030/users/single/${id}`);
+    const __users = users.filter(u=>u._id !== id);
+    setUsers(__users)
+  }
+
+  console.log(users );
   return (
 
     <div className={userCSS.userManagement}>
@@ -43,12 +55,13 @@ export default function Users() {
             <div className={[userCSS.col, userCSS.col5]} data-label="nationality">{user.nationality}</div>
             <div className={[userCSS.col, userCSS.col6]} data-label="Role">{user.role["description"]}</div>
             <div className={[userCSS.col, userCSS.col7]} data-label="Actions">
-              <i style=
-                {{ color: 'rgb(60, 141, 60)', fontSize: '19px', margirRight: "10px" }}
-                className="fas fa-trash"></i>
-              <i style=
-                {{ color: 'rgb(199, 69, 69)', fontSize: '22px', position: 'relative', top: '1px' }}
-                className="fas fa-pen-square"></i>
+              <i onClick={() => handeleDelete(user._id)} style={{ color: "red", marginRight: "10px", fontSize: "20px", cursor: "pointer" }}
+                className="fas fa-trash icones"></i>
+                <Link to={`/update/user/${user._id}`} className="linknav">
+                <i style={{ color: "green", marginRight: "10px", fontSize: "22px", cursor: "pointer" }}
+                className="fas fa-pen-square icones"></i>
+                </Link>
+              
             </div>
           </li>
         ))}

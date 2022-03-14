@@ -13,33 +13,38 @@ import Navbar from "./components/global/Navbar";
 import Users from "./components/dashboardComponents/Users/Users";
 import Reservations from "./components/dashboardComponents/Reservations/Reservations";
 import Roles from "./components/dashboardComponents/Roles/Roles";
-import ThemeContextProvider from "./contexts/ThemeContext";
+import { useContext } from "react";
+import { Context } from "./contexts/Context";
+import UpdateUser from "./pages/UpdateUser";
+
 
 
 function App() {
-  const user = true;
+  const {user} = useContext(Context);
   return (
     <div className="App">
-      <ThemeContextProvider>
+     
         <Router>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
 
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={user ? <Home/> : <Login />} />
 
-            <Route path="/register" element={<Register />} />
+            <Route path="/register" element={user ? <Home /> : <Register />} />
 
-            <Route path="/dashboard" element={<Dashboard />} >
+            <Route path="/dashboard" element={user ? <Dashboard /> : <Login />} >
               <Route path="users" element={<Users />} />
               <Route path="reservations" element={<Reservations />} />
               <Route path="roles" element={<Roles />} />
             </Route>
-            <Route path="/about" element={<About />} />
 
+            <Route path="/about" element={<About />} />
+            
+            <Route path="/update/user/:id" element={user ? <UpdateUser /> : <Home/> } />
           </Routes>
         </Router>
-      </ThemeContextProvider>
+      
     </div>
   );
 }
