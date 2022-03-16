@@ -1,36 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './doghnut.css'
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
 
+import axios from 'axios';
 
-const data01 = [
-    { name: 'Group A', value: 400 }, { name: 'Group B', value: 300 },
-    { name: 'Group C', value: 300 }, { name: 'Group D', value: 200 },
-];
-const data02 = [
-    { name: 'A1', value: 100 },
-    { name: 'A2', value: 300 },
-    { name: 'B1', value: 100 },
-    { name: 'B2', value: 80 },
-    { name: 'B3', value: 40 },
-    { name: 'B4', value: 30 },
-    { name: 'B5', value: 50 },
-    { name: 'C1', value: 100 },
-    { name: 'C2', value: 200 },
-    { name: 'D1', value: 150 },
-    { name: 'D2', value: 50 },
-];
+import { useState, useEffect } from 'react';
 
+import { LineChart, CartesianGrid, XAxis, YAxis, Legend, Tooltip, Line } from 'recharts';
+import { Context } from '../../../../contexts/Context';
 
 
 
 export default function DoghnutCHart() {
+
+
+    const {allReservations} = useContext(Context);
     return (
         <div className='pieCHart'>
-            <PieChart width={400} height={400}>
-                <Pie data={data01} dataKey="value" cx={200} cy={200} outerRadius={60} fill="#8884d8" />
-                <Pie data={data02} dataKey="value" cx={200} cy={200} innerRadius={70} outerRadius={90} fill="#82ca9d" label />
-            </PieChart>
+            <LineChart width={500} height={250} data={allReservations}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="dateCheckIn" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Line type="monotone" dataKey="numberOfContainer" stroke="#82ca9d" />
+            </LineChart>
         </div>
     )
 }

@@ -15,7 +15,7 @@ export default function Content() {
       </div>
           <div className="contentWrapper">
           
-          <BarChart className="bars"/>
+          <BarChart />
           <DoghnutCHart />
             </div>
             <Outlet  className="outlet"/>

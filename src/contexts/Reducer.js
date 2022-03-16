@@ -5,25 +5,33 @@ const Reducer = (state, action) => {
                 user: null,
                 isFetching: true,
                 error: false,
+                allReservations: null,
             };
         case "LOGIN_SUCCESS":
             return {
-                user: action.payload,
+                user: action.payload.user,
                 isFetching: false,
                 error: false,
+                allReservations: action.payload.allReservations,
+
             };
         case "LOGIN_FAILURE":
             return {
                 user: null,
                 isFetching: false,
                 error: true,
+                allReservations: null,
+
             };
         case "LOGOUT":
             return {
                 user: null,
                 isFetching: false,
                 error: false,
+                allReservations: null,
+
             };
+            
         default:
             return state;
     }

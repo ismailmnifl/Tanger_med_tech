@@ -26,17 +26,3 @@ export default function Ticket(props) {
         </div>
     )
 }
-
-
-
-/* 
-<reactBootstrap.Card  style={{ width: '15rem',border:"1px solid #0E185F" }}>
-                <reactBootstrap.Card.Header>Number of Reservations</reactBootstrap.Card.Header>
-                <reactBootstrap.Card.Body>
-                    <reactBootstrap.Card.Title style={{color:"#0E185F"}}>56</reactBootstrap.Card.Title>
-                    <reactBootstrap.Card.Text>
-                        
-                    </reactBootstrap.Card.Text>
-                </reactBootstrap.Card.Body>
-            </reactBootstrap.Card>
-*/

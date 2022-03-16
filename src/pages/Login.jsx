@@ -1,8 +1,8 @@
-import React, { useContext, useRef ,useState} from 'react';
+import React, { useContext, useEffect, useRef ,useState} from 'react';
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import bg from '../assets/images/login.jpg';
-import avatar from '../assets/images/loginAvatar.png';
+import avatar from '../assets/images/secure.gif';
 
 import './styles/login.css';
 
@@ -17,16 +17,26 @@ export default function Login() {
 
     const {dispatch, isFetching} = useContext(Context);
 
+    const [allReservations, setReservations] = useState([]);
+    useEffect(() => {
+        const getReservations = async () => {
+          const reservationsRes = await axios.get("http://localhost:3030/reservations/");
+          setReservations(reservationsRes.data);
+        }
+        getReservations();
+      }, []);
+
     const handeleSubmit = async (e) => {
         setError(false);
         e.preventDefault();
         dispatch({type: "LOGIN_START"});
         try {
-            const res = await axios.post("http://localhost:3030/auth/login/",{
+            const userRes = await axios.post("http://localhost:3030/auth/login/",{
                 email: userRef.current.value,
                 password: passwordRef.current.value,
             });
-            dispatch({type: "LOGIN_SUCCESS", payload: res.data});
+
+            dispatch({type: "LOGIN_SUCCESS", payload: {user: userRes.data,allReservations: allReservations}});
             
         } catch (err) {
             dispatch({type: "LOGIN_FAILURE"});

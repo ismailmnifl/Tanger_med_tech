@@ -24,7 +24,7 @@ export default function Users() {
   const handeleDelete = async (id) => {
    const res = await axios.delete(`http://localhost:3030/users/single/${id}`);
     const __users = users.filter(u=>u._id !== id);
-    setUsers(__users)
+    setUsers(__users);
   }
 
   console.log(users );
@@ -34,7 +34,7 @@ export default function Users() {
       <div className={userCSS.spacer}></div>
       <div className={userCSS.wrappera}>
         <h3>User Management Section</h3>
-        <Modal />
+        
       </div>
       <ul className={userCSS.responsiveTable}>
         <li className={userCSS.tableHeader}>
@@ -53,7 +53,7 @@ export default function Users() {
             <div className={[userCSS.col, userCSS.col3]} data-label="Phone Number">{user.phoneNumber}</div>
             <div className={[userCSS.col, userCSS.col4]} data-label="adresse">{user.adresse}</div>
             <div className={[userCSS.col, userCSS.col5]} data-label="nationality">{user.nationality}</div>
-            <div className={[userCSS.col, userCSS.col6]} data-label="Role">{user.role["description"]}</div>
+            <div className={[userCSS.col, userCSS.col6]} data-label="Role">{user.role?.description}</div>
             <div className={[userCSS.col, userCSS.col7]} data-label="Actions">
               <i onClick={() => handeleDelete(user._id)} style={{ color: "red", marginRight: "10px", fontSize: "20px", cursor: "pointer" }}
                 className="fas fa-trash icones"></i>

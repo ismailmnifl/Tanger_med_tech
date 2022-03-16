@@ -14,7 +14,7 @@ export default function Register() {
     const [Fullname, setFullname] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [phone, setPhone] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
     const [adresse, setAdresse] = useState("");
     const [nationality, setNationality] = useState("");
     const [error, setError] = useState(false);
@@ -30,7 +30,7 @@ export default function Register() {
                     Fullname,
                     email,
                     password,
-                    phone,
+                    phoneNumber,
                     adresse,
                     nationality,
                     roleId
@@ -73,7 +73,7 @@ export default function Register() {
 
                         <Form.Group as={Col} controlId="formBasicPhone">
                             <Form.Label>Phone Number</Form.Label>
-                            <Form.Control onChange={e => setPhone(e.target.value)} name='phoneNumber' type="text" placeholder="Enter Phone Number" />
+                            <Form.Control onChange={e => setPhoneNumber(e.target.value)} name='phoneNumber' type="text" placeholder="Enter Phone Number" />
                         </Form.Group>
                     </Row>
                     <Row className="mb-3">

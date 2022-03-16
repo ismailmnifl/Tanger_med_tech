@@ -22,17 +22,24 @@
     justify-content: center;
 }
 
-.roleSelect {
-    width: 90%;
-}
-
 .registerImage {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+.dataWrapper{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-bottom: 20px;
 
-
+}
+.enumTest {
+    color: #0E185F;
+    font-weight: 500;
+    margin-right: 30px;
+}
 @media screen and (max-width: 768px) {
     .updateLeftSide {
         display: none;
